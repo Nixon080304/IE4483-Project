@@ -4,7 +4,7 @@
 # Author: Nixon Edward Winata
 # =====================================================
 
-echo "🐱 IE4483 Project — Environment Setup Starting..."
+echo "IE4483 Project — Environment Setup Starting..."
 
 # 1. Check Python version
 if ! command -v python3 &> /dev/null
@@ -14,7 +14,7 @@ then
 fi
 
 # 2. Create virtual environment
-echo "📦 Creating virtual environment..."
+echo "Creating virtual environment..."
 python3 -m venv .venv
 
 # 3. Activate venv
@@ -27,7 +27,7 @@ pip install --upgrade pip
 pip install -r requirements.txt
 
 # 5. Create folder structure (if not exists)
-echo "📁 Ensuring directory structure..."
+echo "Ensuring directory structure..."
 mkdir -p data/datasets models
 
 # 6. Optional: Download Dogs vs Cats dataset (requires gdown)
