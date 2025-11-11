@@ -1,4 +1,4 @@
-# IE4483 Project — Dogs vs Cats & CIFAR-10 Classification 🐶🐱
+# IE4483 Project — Dogs vs Cats & CIFAR-10 Classification
 
 This project was developed for **IE4483 Artificial Intelligence and Data Mining (NTU)**.  
 It covers binary image classification (**Dogs vs Cats**) and multi-class classification (**CIFAR-10**), including a class-imbalance study.
@@ -51,7 +51,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🐶 **Dogs vs Cats Classification**
+## **Dogs vs Cats Classification**
 
 ### 🔹 Step 1: Prepare the dataset
 Download the dataset from [Google Drive](https://drive.google.com/file/d/1q0r6yeHQMS17R3wz-s2FIbMR5DAGZK5v/view)  
@@ -119,7 +119,7 @@ Resulting weights → `models/best_cifar10_resnet18_imbalanced.pth`.
 
 ---
 
-## 💡 Key Results
+## Key Results
 
 | Task                        | Dataset Size | Best Validation Accuracy |
 |-----------------------------|--------------|--------------------------|
@@ -129,17 +129,11 @@ Resulting weights → `models/best_cifar10_resnet18_imbalanced.pth`.
 
 ---
 
-## 🧠 Notes
+## Notes
 - All models use **ResNet-18** backbone pretrained on ImageNet.
 - Training/validation are GPU-accelerated if `cuda` is available.
 - Datasets are ignored by Git (.gitignore) due to large file size.
 - Scripts are modular and reusable for custom datasets.
-
----
-
-## 👤 Contributors
-- **Nixon Edward Winata** — Implementation, model training, documentation  
-- *Teammates (add your names if group work)*
 
 ---
 
