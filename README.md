@@ -166,16 +166,6 @@ Resulting weights → `models/best_cifar10_resnet18_imbalanced.pth`.
 - Training/validation are GPU-accelerated if `cuda` is available.
 - Datasets are ignored by Git (.gitignore) due to large file size.
 - Scripts are modular and reusable for custom datasets.
-
----
-
-## Course Information
-This project was developed for **IE4483 Artificial Intelligence and Data Mining**,  
-School of Electrical and Electronic Engineering, **Nanyang Technological University (NTU)**, 2025.
-
-Supervised by: *[Instructor/TA Name]*  
-Author: **Nixon Edward Winata**
-
 ---
 
 ## License
