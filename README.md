@@ -1,7 +1,31 @@
-# IE4483 Project — Dogs vs Cats & CIFAR-10 Classification
+# IE4483 Project — Dogs vs Cats & CIFAR-10 Classification 🐶🐱
+![Python](https://img.shields.io/badge/python-3.8+-blue)
+![PyTorch](https://img.shields.io/badge/pytorch-2.0+-red)
+![License](https://img.shields.io/badge/license-Educational-green)
 
-This project was developed for **IE4483 Artificial Intelligence and Data Mining (NTU)**.  
-It covers binary image classification (**Dogs vs Cats**) and multi-class classification (**CIFAR-10**), including a class-imbalance study.
+This repository contains the complete implementation for the **IE4483 Artificial Intelligence and Data Mining** mini-project at NTU (2025).
+
+---
+
+## 🚀 Quick Start
+
+For a one-command setup:
+```bash
+bash setup.sh
+```
+This script will:
+1. Create a Python virtual environment  
+2. Install all dependencies  
+3. Optionally download and extract the Dogs vs Cats dataset automatically  
+4. Prepare everything for training
+
+---
+
+## 💻 Requirements
+- Python 3.8 or above  
+- GPU with CUDA (recommended but optional)  
+- Git installed  
+- Internet connection (for downloading CIFAR-10 or datasets)
 
 ---
 
@@ -24,6 +48,7 @@ ie4483-dogs-vs-cats/
 │
 ├── submission.csv         # Output for Dogs vs Cats test set
 ├── requirements.txt
+├── setup.sh
 └── README.md
 ```
 
@@ -51,9 +76,9 @@ pip install -r requirements.txt
 
 ---
 
-## **Dogs vs Cats Classification**
+## 🐶 Dogs vs Cats Classification
 
-### 🔹 Step 1: Prepare the dataset
+### Step 1: Prepare the dataset
 Download the dataset from [Google Drive](https://drive.google.com/file/d/1q0r6yeHQMS17R3wz-s2FIbMR5DAGZK5v/view)  
 and extract it under `data/datasets/` so the structure is:
 
@@ -71,7 +96,7 @@ data/datasets/
     └── ...
 ```
 
-### 🔹 Step 2: Train the model
+### Step 2: Train the model
 ```bash
 python src/train_dogs_cats.py --data-root data/datasets --epochs 5
 ```
@@ -80,7 +105,14 @@ Best model will be saved to:
 models/best_dogs_cats_resnet18.pth
 ```
 
-### 🔹 Step 3: Generate predictions for test set
+Example output:
+```
+Epoch 1/5
+Train loss: 0.2874, acc: 0.9054 - Val acc: 0.9568
+✅ New best model saved with val acc: 0.9568
+```
+
+### Step 3: Generate predictions for test set
 ```bash
 python src/predict_test.py \
   --data-root data/datasets \
@@ -98,16 +130,16 @@ id,label
 
 ---
 
-## 🐸 **CIFAR-10 Classification**
+## 🐸 CIFAR-10 Classification
 
-### 🔹 Train baseline model
+### Train baseline model
 ```bash
 python src/train_cifar10.py
 ```
 This automatically downloads the CIFAR-10 dataset and trains for 5 epochs.  
 Best model → `models/best_cifar10_resnet18.pth`.
 
-### 🔹 Train imbalanced version (Part h)
+### Train imbalanced version (Part h)
 ```bash
 python src/train_cifar10_imbalanced.py
 ```
@@ -119,7 +151,7 @@ Resulting weights → `models/best_cifar10_resnet18_imbalanced.pth`.
 
 ---
 
-## Key Results
+## 💡 Key Results
 
 | Task                        | Dataset Size | Best Validation Accuracy |
 |-----------------------------|--------------|--------------------------|
@@ -129,11 +161,26 @@ Resulting weights → `models/best_cifar10_resnet18_imbalanced.pth`.
 
 ---
 
-## Notes
+## 🧠 Notes
 - All models use **ResNet-18** backbone pretrained on ImageNet.
 - Training/validation are GPU-accelerated if `cuda` is available.
 - Datasets are ignored by Git (.gitignore) due to large file size.
 - Scripts are modular and reusable for custom datasets.
+
+---
+
+## 🏫 Course Information
+This project was developed for **IE4483 Artificial Intelligence and Data Mining**,  
+School of Electrical and Electronic Engineering, **Nanyang Technological University (NTU)**, 2025.
+
+Supervised by: *[Instructor/TA Name]*  
+Author: **Nixon Edward Winata**
+
+---
+
+## 👤 Contributors
+- **Nixon Edward Winata** — Implementation, model training, documentation  
+- *Teammates (add your names if group work)*
 
 ---
 
