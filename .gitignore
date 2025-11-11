@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual env
+.venv/
+
+# Data (do NOT push large image datasets)
+data/
+dataset/
+*.zip
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Misc
+.DS_Store
+
