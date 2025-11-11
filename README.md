@@ -3,7 +3,7 @@
 ![PyTorch](https://img.shields.io/badge/pytorch-2.0+-red)
 ![License](https://img.shields.io/badge/license-Educational-green)
 
-This repository contains the complete implementation for the **IE4483 Artificial Intelligence and Data Mining** mini-project at NTU (2025).
+This repository contains the complete implementation for the **IE4483 Artificial Intelligence and Data Mining** project 2.
 
 ---
 
