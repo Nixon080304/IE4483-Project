@@ -1,4 +1,4 @@
-# IE4483 Project — Dogs vs Cats & CIFAR-10 Classification 🐶🐱
+# IE4483 Project — Dogs vs Cats & CIFAR-10 Classification
 ![Python](https://img.shields.io/badge/python-3.8+-blue)
 ![PyTorch](https://img.shields.io/badge/pytorch-2.0+-red)
 ![License](https://img.shields.io/badge/license-Educational-green)
@@ -7,7 +7,7 @@ This repository contains the complete implementation for the **IE4483 Artificial
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 For a one-command setup:
 ```bash
@@ -29,7 +29,7 @@ This script will:
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 ```
 ie4483-dogs-vs-cats/
 │
@@ -76,7 +76,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🐶 Dogs vs Cats Classification
+## Dogs vs Cats Classification
 
 ### Step 1: Prepare the dataset
 Download the dataset from [Google Drive](https://drive.google.com/file/d/1q0r6yeHQMS17R3wz-s2FIbMR5DAGZK5v/view)  
@@ -130,7 +130,7 @@ id,label
 
 ---
 
-## 🐸 CIFAR-10 Classification
+## CIFAR-10 Classification
 
 ### Train baseline model
 ```bash
@@ -151,7 +151,7 @@ Resulting weights → `models/best_cifar10_resnet18_imbalanced.pth`.
 
 ---
 
-## 💡 Key Results
+## Key Results
 
 | Task                        | Dataset Size | Best Validation Accuracy |
 |-----------------------------|--------------|--------------------------|
@@ -161,7 +161,7 @@ Resulting weights → `models/best_cifar10_resnet18_imbalanced.pth`.
 
 ---
 
-## 🧠 Notes
+## Notes
 - All models use **ResNet-18** backbone pretrained on ImageNet.
 - Training/validation are GPU-accelerated if `cuda` is available.
 - Datasets are ignored by Git (.gitignore) due to large file size.
@@ -169,7 +169,7 @@ Resulting weights → `models/best_cifar10_resnet18_imbalanced.pth`.
 
 ---
 
-## 🏫 Course Information
+## Course Information
 This project was developed for **IE4483 Artificial Intelligence and Data Mining**,  
 School of Electrical and Electronic Engineering, **Nanyang Technological University (NTU)**, 2025.
 
@@ -178,11 +178,5 @@ Author: **Nixon Edward Winata**
 
 ---
 
-## 👤 Contributors
-- **Nixon Edward Winata** — Implementation, model training, documentation  
-- *Teammates (add your names if group work)*
-
----
-
-## 📜 License
+## License
 Educational use only — NTU IE4483 Project 2025.
