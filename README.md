@@ -21,7 +21,7 @@ This script will:
 
 ---
 
-## 💻 Requirements
+## Requirements
 - Python 3.8 or above  
 - GPU with CUDA (recommended but optional)  
 - Git installed  
@@ -54,21 +54,21 @@ ie4483-dogs-vs-cats/
 
 ---
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
-### 1️⃣ Clone the repository
+### 1️ Clone the repository
 ```bash
 git clone https://github.com/Nixon080304/IE4483-Project.git
 cd IE4483-Project
 ```
 
-### 2️⃣ Create a virtual environment
+### 2 Create a virtual environment
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate    # On Windows: .venv\Scripts\activate
 ```
 
-### 3️⃣ Install dependencies
+### 3️ Install dependencies
 ```bash
 pip install --upgrade pip
 pip install -r requirements.txt
@@ -109,7 +109,7 @@ Example output:
 ```
 Epoch 1/5
 Train loss: 0.2874, acc: 0.9054 - Val acc: 0.9568
-✅ New best model saved with val acc: 0.9568
+New best model saved with val acc: 0.9568
 ```
 
 ### Step 3: Generate predictions for test set
