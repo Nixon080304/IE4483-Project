@@ -1,6 +1,7 @@
 import os
 import time
 import argparse
+import json   # NEW
 
 import torch
 import torch.nn as nn
@@ -98,6 +99,12 @@ def main():
     best_val_acc = 0.0
     best_model_path = os.path.join(args.save_dir, "best_dogs_cats_resnet18.pth")
 
+    # NEW: lists to store metrics for plotting
+    train_losses = []
+    train_accs = []
+    val_losses = []
+    val_accs = []
+
     for epoch in range(args.epochs):
         print(f"\nEpoch {epoch + 1}/{args.epochs}")
         start_time = time.time()
@@ -117,11 +124,29 @@ def main():
             f"- Time: {elapsed:.1f}s"
         )
 
+        # store metrics
+        train_losses.append(train_loss)
+        train_accs.append(train_acc)
+        val_losses.append(val_loss)
+        val_accs.append(val_acc)
+
         # Save best model
         if val_acc > best_val_acc:
             best_val_acc = val_acc
             torch.save(model.state_dict(), best_model_path)
             print(f"✅ New best model saved with val acc: {best_val_acc:.4f}")
+
+    # NEW: save logs for plotting later
+    logs = {
+        "train_loss": train_losses,
+        "train_acc": train_accs,
+        "val_loss": val_losses,
+        "val_acc": val_accs,
+    }
+    log_path = os.path.join(args.save_dir, "dogs_cats_training_logs.json")
+    with open(log_path, "w") as f:
+        json.dump(logs, f, indent=2)
+    print(f"Saved training logs to {log_path}")
 
     print(f"\nTraining complete. Best val acc: {best_val_acc:.4f}")
     print(f"Best model path: {best_model_path}")
@@ -129,4 +154,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

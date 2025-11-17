@@ -97,6 +97,7 @@ def main():
     # 4. Inference
     all_ids = []
     all_preds = []
+    all_confidences = []
 
     with torch.no_grad():
         for inputs, filenames in tqdm(test_loader, desc="Predict"):
@@ -104,17 +105,25 @@ def main():
 
             outputs = model(inputs)
             _, preds = torch.max(outputs, 1)   # preds are 0 or 1
+            probs = torch.softmax(outputs, dim=1)
+            pred_confidences = torch.gather(probs, 1, preds.unsqueeze(1)).squeeze(1)
 
-            for fname, pred in zip(filenames, preds.cpu().numpy()):
+            for fname, pred, conf in zip(
+                filenames,
+                preds.cpu().numpy(),
+                pred_confidences.cpu().numpy()
+            ):
                 # Remove file extension for ID, e.g. "123.jpg" -> "123"
                 stem, _ = os.path.splitext(fname)
                 all_ids.append(stem)
                 all_preds.append(int(pred))  # 0 = cat, 1 = dog
+                all_confidences.append(float(conf))
 
     # 5. Build submission DataFrame
     df = pd.DataFrame({
         "id": all_ids,
-        "label": all_preds
+        "label": all_preds,
+        "confidence": all_confidences
     })
 
     # Sort by id just in case
@@ -131,4 +140,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
