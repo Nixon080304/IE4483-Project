@@ -33,23 +33,31 @@ This script will:
 ```
 ie4483-dogs-vs-cats/
 │
-├── data/                  # Dataset directory (not tracked in Git)
-│   └── datasets/          # train/, val/, test/ for Dogs vs Cats
+├── data/                         
+│   └── datasets/                  
 │
-├── models/                # Saved model weights (.pth)
+├── models/                        
+│   ├── best_dogs_cats_resnet18.pth
+│   ├── best_cifar10_resnet18.pth
+│   ├── best_cifar10_resnet18_imbalanced.pth
+│   └── dogs_cats_training_logs.json   
+│
+├── notebooks/                    
+│   └── dogs_vs_cats_visualization.ipynb  
 │
 ├── src/
-│   ├── datasets.py        # Data loaders + augmentations
-│   ├── models.py          # ResNet-18 model definition
-│   ├── train_dogs_cats.py # Train on Dogs vs Cats
-│   ├── predict_test.py    # Predict test set → submission.csv
-│   ├── train_cifar10.py   # Train on CIFAR-10 (balanced)
-│   └── train_cifar10_imbalanced.py # CIFAR-10 with imbalance handling
+│   ├── datasets.py                
+│   ├── models.py                  
+│   ├── train_dogs_cats.py         
+│   ├── predict_test.py            
+│   ├── train_cifar10.py           
+│   └── train_cifar10_imbalanced.py 
 │
-├── submission.csv         # Output for Dogs vs Cats test set
+├── submission.csv                 
 ├── requirements.txt
 ├── setup.sh
 └── README.md
+
 ```
 
 ---
@@ -65,7 +73,7 @@ cd IE4483-Project
 ### 2 Create a virtual environment
 ```bash
 python3 -m venv .venv
-source .venv/bin/activate    # On Windows: .venv\Scripts\activate
+source .venv/bin/activate   
 ```
 
 ### 3️ Install dependencies
